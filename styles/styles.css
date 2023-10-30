@@ -104,7 +104,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 0.5rem;
   width: 100%;
-  margin: 0;
+  justify-content: center;
 }
 
 .input-container {
@@ -115,6 +115,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   user-select: text;
+  width: 100%;
 }
 
 /* Styles for the note title */
@@ -140,6 +141,8 @@ body {
   min-height: 150px;
   overflow: hidden;
   max-height: 150px;
+  width: 90%;
+  max-width: 300px;
 }
 
 .input-title:empty::before,
@@ -159,23 +162,21 @@ body {
 }
 
 /* X-Small devices (portrait phones, less than 576px) */
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 575.98px) and (orientation: portrait) {
   #notes-container {
     grid-template-columns: repeat(1, 1fr) !important;
-    grid-gap: 0.5rem;
+    grid-gap: 1rem;
     font-size: 12px;
-    justify-content: center;
   }
 
   .input-container {
-    margin: 1px;
+    margin: 2px;
     font-size: 12px;
   }
 
   .input-box {
-    padding: 5px;
-    min-height: 120px;
-    max-height: 120px;
+    padding: 10px;
+    min-height: auto;
   }
 
   .input-container img {
@@ -186,12 +187,18 @@ body {
   }
 }
 
-/* Small devices (landscape phones, less than 768px) */
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 689.98px) {
   #notes-container {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
-    justify-content: center;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media screen and (max-width: 767.98px) and (orientation: landscape) {
+  #notes-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
   }
 }
 
